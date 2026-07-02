@@ -1,0 +1,91 @@
+# External plugins
+# See http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html for making `jekyll archives` work.
+plugins:
+  - jekyll-archives # Sorry, not GitHub pages friendly!
+  - jekyll-sitemap
+  - jekyll-paginate-v2
+
+exclude:
+  - "/vendor/"
+
+# Site settings
+title: RoughFire<sup>©</sup>
+subtitle: "Portfólio de projetos, experimentos e aprendizados,<br> por Rafael C. Monteiro"
+email: rahmonteiro15@gmail.com
+name: Rafael C. Monteiro
+description: >
+  Portfólio de projetos pessoais. Rafael Cruz Monteiro. Jogos. Ciência de Dados. Experimentos. Aprendizados. Projetos. GitHub. RoughFire
+# Base URL of site (i.e. /blog). It should always start with a slash,
+# and never end with a slash. Set it to a blank value if hosting at the
+# root of your server.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
+cover: "/assets/header_image.jpg"
+logo: "/assets/logo.png"
+
+# Build settings
+markdown: kramdown
+inter_post_navigation: false
+highlightjs_theme: "monokai-sublime"
+
+# Pagination Settings
+# https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: "/page/:num/"
+  sort_reverse: true
+
+# Archive settings (see https://github.com/jekyll/jekyll-archives/)
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: 'archive'
+  permalinks:
+    category: '/category/:name/'
+    tag: '/tag/:name/'
+
+# Disqus comments
+# disqus_shortname: bencentra
+
+# Google analytics
+# ga_tracking_id: "UA-XXXX-1"
+
+# Category descriptions (for archive pages)
+descriptions:
+  - cat: jekyll
+    desc: "Posts describing Jekyll setup techniques."
+
+  - cat: dummy
+    desc: "Just some placeholder posts, lorem ipsum and the rest."
+social:
+  - name: GitHub
+    icon: github
+    username: "RahMont_3iro" # TODO: seu usuário do GitHub
+    url: "https://github.com/RahMonteiro1/" 
+    desc: Veja meus projetos no GitHub
+    share: false
+
+  - name: LinkedIn
+    icon: linkedin
+    username: "Rafael Cruz Monteiro"
+    url: "https://www.linkedin.com/in/rafael-cruz-monteiro/"
+    desc: Conecte-se comigo no LinkedIn
+    share: true
+
+
+# Social sharing protocols
+# These are for automatically generating sharing metadata for FB and Twitter
+# OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
+protocols:
+    fb_image: "/assets/logo.png"
+    fb_image_width: 612
+    fb_image_height: 605
+    fb_image_type: "image/png"
+
+    twitter_image: "/assets/logo.png"
+
+    os_repo: "https://github.com/bencentra/centrarium.com"
+    os_rcs_type: "git"
+    os_src: "git@github.com:bencentra/centrarium.com.git"

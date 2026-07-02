@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="site-header-container {% if site.cover %}has-cover{% endif %}" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }});"{% endif %}>
+    <div class="scrim {% if site.cover %}has-cover{% endif %}">
+      <header class="site-header">
+        <h1 class="title">{{ site.title }}</h1>
+        {% if site.subtitle %}<p class="subtitle">{{ site.subtitle }}</p>{% endif %}
+      </header>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <section class="home-intro">
+      <p>
+       <section class="home-intro">
+  <p>
+    Este espaço reúne o registro de um processo: experimentos em desenvolvimento de software, análise de dados e (talvez) eletrônica, documentados
+    com as tentativas, os impasses e as conclusões extraídas de cada um.
+  </p>
+    <p>
+      <a href="{{ '/about/' | prepend: site.baseurl }}">Conheça um pouco mais sobre mim</a>
+      ou
+      <a href="{{ '/posts/' | prepend: site.baseurl }}">veja todos os experimentos</a>.
+    </p>
+    </section>
+
+    <section class="home-latest">
+      <h2>Últimos experimentos</h2>
+      <ul class="post-list">
+        {% for post in site.posts limit:3 %}
+        <li>
+          <h3>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h3>
+          <section class="post-excerpt" itemprop="description">
+            <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+          </section>
+          <section class="post-meta">
+            <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+          </section>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</div>
